@@ -1,0 +1,111 @@
+/*reset*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+h2 {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: black;
+    padding-top: 10px;
+}
+h3 {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    color: white;  
+}
+
+
+.container {
+    display: flex;
+
+
+}
+.startBtn {
+    border-radius: 7px;
+    border-color: red;
+    padding: 15px;
+    background-image: linear-gradient(gold,red,red, gold);
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;   
+}
+.answer {
+
+    border-radius: 7px;
+    padding: 3px;
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 30px;   
+}
+
+.timeSect {
+    flex: 1;
+    padding-top: 20px;
+    background-color: bisque;
+    width: 50vmin;
+    height: 800px;
+    
+}
+.timeSect h2 {
+    text-align: center;
+}
+
+.central {
+    flex: 2;
+    width: 600vmin;
+    height: 800px;
+    background-color: aqua; 
+    padding-top: 20dvh;
+    padding-left: 10dvh; 
+    padding-right: 10dvh;
+    text-align: justify;
+    
+}
+.startTime {
+box-sizing: 20px, 5px;
+box-color: red;
+}
+.highscore {   
+    flex: 1;
+    width: 50vmin;
+    height: 800;
+    background-color: rgb(51, 0, 255);
+
+}
+
+  
+  .card-footer {
+    text-align: center;
+  }
+  
+  .card-footer::before {
+    content: " ";
+    display: block;
+    width: 100%;
+    background: #e7e9eb;
+    height: 2px;
+  }
+  
+  .card-footer::after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  
+
