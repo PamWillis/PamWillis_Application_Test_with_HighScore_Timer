@@ -9,37 +9,35 @@
 </head>
 
 <body>
-    <div class="container">
-        <aside class="highscore">
-            <h2>highscore</h2>
-        </aside>
-     <!-- Coding Quiz Challenge -->
-        <div class="central" id="start">
-            <h1>Coding Quiz Challenge</hi>
-                <h2>Try to answer the following code-related questions within the time limit. Keep in mind that
-                    incorrect answers will penalize your score/time by ten seconds!</h2>
-                <div class="card-footer">
-                    <button id="generate" class="startBtn">START</button>
+    <aside class="highscore">
+        <h2>highscore</h2>
+    </aside>
+    <div class="central">
+        <container class="central-container">
+            <div id="question-container" class="hide">
+                <div id="question">Question</div>
+                <div id="answerBtn" class="btn-grid">
+                    <button class="btn">Answer1</button>
+                    <button class="btn">Answer2</button>
+                    <button class="btn">Answer3</button>
+                    <button class="btn">Answer4</button>
                 </div>
-        </div>
+                <div id="grading">bmbb</div>
+            </div>
 
-        <div class="central">
-            <h1>Commonly used data types DO NOT INCLUDE:</hi>
-                <div class="card-footer">
-                    <button id="button1" class="answer">strings</button>
-                    <button id="button2" class="answer">booleans</button>
-                    <button id="button3" class="answer">alerts</button>
-                    <button id="button4" class="answer">numbers</button>
-                </div>
-                <div><p id=grade></p></div>
-        </div>
-
-        <aside class="timeSect">
-            <h1 class="time"></h1>
-            <div id="main"></div>
-            <h2>Seconds Remaining</h2>
-        </aside>
+            <div class="controls">
+                <button id="generate" class="startBtn onBtn">START</button>
+                <button id="nextgen" class="nextBtn hide">NEXT</button>
+            </div>
+        </container>
     </div>
+
+    <aside class="timeSect">
+        <h1 class="time"></h1>
+        <div id="main"></div>
+        <h2>Seconds Remaining</h2>
+    </aside>
+
     <script src="/assets/js/script.js"></script>
 </body>
 

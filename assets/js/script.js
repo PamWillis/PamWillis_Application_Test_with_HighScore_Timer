@@ -11,6 +11,7 @@ var mainEl = document.getElementById("main");
 var secondsLeft = 10;
 
 function setTime() {
+  
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     secondsLeft--;
@@ -43,6 +44,9 @@ function sendMessage() {
 // Add event listener to generate button
 generate.addEventListener("click", setTime);
 start.disabled = false;
+
+//next();
+
 
 
 
@@ -108,4 +112,3 @@ function response4 () {
 // }
 
 
-// clearInterval(timer);

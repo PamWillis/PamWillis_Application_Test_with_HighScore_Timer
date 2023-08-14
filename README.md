@@ -69,3 +69,8 @@ Go the extra mile and write tests for your application. Then provide examples on
 
 image: times up
 https://www.freepik.com/free-photo/times-up-blue-text-adhesive-note-near-white-alarm-clock-against-black-backdrop_3966888.htm#query=times%20up&position=17&from_view=search&track=ais
+
+video:
+Build A Quiz App With JavaScript
+by Web Dev Simplified
+https://youtu.be/riDzcEQbX6k

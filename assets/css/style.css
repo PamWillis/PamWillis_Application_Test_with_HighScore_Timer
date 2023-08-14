@@ -21,26 +21,62 @@ h2 {
     padding-top: 10px;
 }
 
-h3 {
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    color: white;
-}
-
-p {
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    color: red;
-}
-
-.container {
+body {
     display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+    flex-wrap: none;
+    
+}
+
+
+.highscore {   
+    width: 25%;
+    height: auto;
+    background-color:lightblue;
+    text-align: center;
+}
+
+.central {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height:auto;
+    background-color: #ccff66;
+    justify-content: center;
+    align-items: start;
+
 
 
 }
+.timeSect {
+    background-color: #cc99ff;
+    width: 25%;
+    height: auto;
+    text-align: center;
 
+}
+
+.central-container {
+    display: block;
+    background-color: white;
+    width: 400px;
+    height: auto;
+    max-width: 80%;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 75px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px 3px;
+    color: darkgreen;
+    text-align: center;
+}
+
+
+/* START AND NEXT BUTTONS */
 .startBtn {
     border-radius: 7px;
     border-color: red;
@@ -53,60 +89,84 @@ p {
     font-size: 30px;
 }
 
-.answer {
-    display: block;
+.nextBtn {
     border-radius: 7px;
-    padding: 3px;
-    background-color: purple;
+    border-color: #003300;
+    padding: 15px;
+    background-image: linear-gradient(#0d0e0d, #006600, #006600, #006600, #0d0e0d);
     color: white;
     font-weight: bold;
-    margin-top: 10px;
-    margin-right: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 30px;
 }
 
-
-.timeSect {
-    flex: 1;
-    padding-top: 20px;
-    background-color: bisque;
-    width: 50vmin;
-    height: 800px;
-
+/* HIDE and DISPLAY */
+.hide {
+    display: none;
 }
 
-.timeSect h2 {
-    text-align: center;
+.onBtn {
+    display: flex;
 }
 
-.central {
+#question {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+    
+}
+#grading {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: blue;
+    
+}
+.btn {
+    display: block;
+    border-radius: 7px;
+    border-color: black;
+    padding: 3px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+}
 
-    flex: 2;
-    width: 600vmin;
-    height: 800px;
-    background-color: aqua;
-    padding-top: 20dvh;
-    padding-left: 10dvh;
-    padding-right: 10dvh;
-    text-align: justify;
+.btn:hover,
+.btn:active,
+.btn:focus {
+    background-color: black;
+    color: white;
+}
 
-
+.btn-grid {
+    display: grid;
+    gap: 10px;
+    margin: 20px;
 }
 
 .startTime {
     display: block;
     box-sizing: 20px, 5px;
-    box-color: red;
 }
-
-.highscore {
-    flex: 1;
-    width: 50vmin;
-    height: 800;
-    background-color: rgb(51, 0, 255);
-
+.next {
+    display: block;
+    box-sizing: 20px, 5px;
 }
-
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .card-footer {
     text-align: center;
@@ -114,7 +174,6 @@ p {
 
 .card-footer::before {
     content: " ";
-    display: block;
     width: 100%;
     background: #e7e9eb;
     height: 2px;
@@ -122,6 +181,5 @@ p {
 
 .card-footer::after {
     content: " ";
-    display: block;
     clear: both;
 }
