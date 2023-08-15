@@ -1,4 +1,6 @@
-
+const startButton =document.getElementById("generator");
+const nextButton = document.getElementById("nextBtn");
+const questionContainer = document.getElementById("question-container");
 
 
 //Timer
@@ -11,7 +13,7 @@ var mainEl = document.getElementById("main");
 var secondsLeft = 10;
 
 function setTime() {
-  
+ 
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     secondsLeft--;
@@ -41,11 +43,31 @@ function sendMessage() {
 // setTime();
 
 //Start Button
-// Add event listener to generate button
-generate.addEventListener("click", setTime);
-start.disabled = false;
+function setNextQuestion() {
+  questionElement.innerText =questions.questions;
+  }
 
-//next();
+function startQuiz() {
+document.getElementById("question").innerText = ("heading");
+generate.classList.add("hide"),
+document.getElementById("nextgen").classList.remove("hide"),
+setNextQuestion()
+}
+document.getElementById
+generate.addEventListener("click", startQuiz)
+// Add event listener to generate button
+generate.addEventListener("click", setTime)
+
+start.disabled = false
+
+//heading
+heading = ["Answer the questions within the 60 secondsLeft, for each question you get wrong, you will be penalized by 15 seconds"];
+//question-object
+question = "What is not an array?"
+answer: [
+  {text: String, correct:true},
+  {text: Boolean, wrong:false}
+]
 
 
 
@@ -53,63 +75,12 @@ start.disabled = false;
 
 
 //add event listener to answers
-button1.addEventListener("click", response1);
-function response1 () {
-  response1=false;
+button.addEventListener("click", response);
+function response () {
+  response=false;
   console.log("wrong"); 
-  if (response1=false) {
-    document.getElementById("grade").innerHTML = "wrong";
+  if (response=false) {
+    document.getElementElem("button").innerHTML = "wrong";
    } 
  }
  
-button2.addEventListener("click", response2);
-function response2 () {
-  response2=false;
-  console.log("wrong");
-  if (response2=false) {
-    document.getElementById("grade").innerHTML = "wrong";
-   }
- }
-
-button3.addEventListener("click", response3);
-function response3 () {
-  response3=true;
-  console.log("correct");
-  if (response3=true) {
-    document.getElementById("grade").innerHTML = "correct";
-   } 
- }
-
-button4.addEventListener("click", response4);
-function response4 () {
-  response4=false;
-  console.log("wrong");
-  if (response4=false) {
-    document.getElementById("grade").innerHTML = "wrong";
-   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var answer =[strings, booleans, alerts, numbers]
-// for (i=0, i<4, i++) {
-//   if (strings || booleans || numbers) {
-//     console.log(wrong);
-//   }
-//   else {
-//   console.log(correct);
-// }
-// }
-
-
-//testbranch
