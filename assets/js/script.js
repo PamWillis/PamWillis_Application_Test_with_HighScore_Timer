@@ -5,15 +5,24 @@ const questionContainer = document.getElementById("question-container");
 //heading
 const heading = "Answer the questions within the 60 secondsLeft, for each question you get wrong, you will be penalized by 15 seconds"
 //question-object
-let problem = {
-question: "What is not an array?",
+let problem1 = {
+question: "Which is not an array?",
 answer: {
-  text1: String, correct: true,
-  text2: Boolean, wrong: false ,
-  text3: Boolean, wrong: false,
-  text4: Boolean, wrong: false
+  text1: "String", wrong: false,
+  text2: "Boolean", wrong: false,
+  text3: "Alerts", correct: true,
+  text4: "Numbers", wrong: false
 }
 }
+let problem2 = {
+  question: "Where is UNC?",
+  answer: {
+    text1: "Chapel Hill", correct: true,
+    text2: "Washington DC", wrong: false ,
+    text3: "Boston", wrong: false,
+    text4: "Juno", wrong: false
+  }
+  }
 
 //Timer
 // Selects element by class
@@ -54,18 +63,25 @@ function sendMessage() {
 
 //first question
 function setNextQuestion() {
-  document.getElementById("question").innerText = ("question");
+  document.getElementById("question").innerText = (problem1.question);
 }
 
 //Start Button
 function startQuiz() {
-  document.getElementById("question").innerText = ("problem.question");
+  document.getElementById("question").innerText = (problem1.question);
   generate.classList.add("hide"),
     document.getElementById("nextgen").classList.remove("hide");
-    document.getElementsByClassName("btn").classList.remove("hide");
+    console.log(document.getElementsByClassName("btn"))
+    // document.getElementsByClassName("btn").classList.remove("hide");
+    Array.from(document.getElementsByClassName("btn")).forEach(
+      function(element, index, array) {
+          element.classList.remove("hide")
+          //need to place info for button here
+      }
+  );
     document.getElementById("grading").classList.remove("hide");
 
-  setNextQuestion() ;
+  setNextQuestion();
 }
 
 generate.addEventListener("click", startQuiz)
