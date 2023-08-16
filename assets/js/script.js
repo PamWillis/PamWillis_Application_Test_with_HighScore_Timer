@@ -1,7 +1,19 @@
-const startButton =document.getElementById("generator");
+const startButton = document.getElementById("generator");
 const nextButton = document.getElementById("nextBtn");
 const questionContainer = document.getElementById("question-container");
 
+//heading
+const heading = "Answer the questions within the 60 secondsLeft, for each question you get wrong, you will be penalized by 15 seconds"
+//question-object
+let problem = {
+question: "What is not an array?",
+answer: {
+  text1: String, correct: true,
+  text2: Boolean, wrong: false ,
+  text3: Boolean, wrong: false,
+  text4: Boolean, wrong: false
+}
+}
 
 //Timer
 // Selects element by class
@@ -13,7 +25,7 @@ var mainEl = document.getElementById("main");
 var secondsLeft = 10;
 
 function setTime() {
- 
+
   // Sets interval in variable
   var timerInterval = setInterval(function () {
     secondsLeft--;
@@ -40,34 +52,29 @@ function sendMessage() {
 
 }
 
-// setTime();
+//first question
+function setNextQuestion() {
+  document.getElementById("question").innerText = ("question");
+}
 
 //Start Button
-function setNextQuestion() {
-  questionElement.innerText =questions.questions;
-  }
-
 function startQuiz() {
-document.getElementById("question").innerText = ("heading");
-generate.classList.add("hide"),
-document.getElementById("nextgen").classList.remove("hide"),
-setNextQuestion()
+  document.getElementById("question").innerText = ("problem.question");
+  generate.classList.add("hide"),
+    document.getElementById("nextgen").classList.remove("hide");
+    document.getElementsByClassName("btn").classList.remove("hide");
+    document.getElementById("grading").classList.remove("hide");
+
+  setNextQuestion() ;
 }
-document.getElementById
+
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
 generate.addEventListener("click", setTime)
 
 start.disabled = false
 
-//heading
-heading = ["Answer the questions within the 60 secondsLeft, for each question you get wrong, you will be penalized by 15 seconds"];
-//question-object
-question = "What is not an array?"
-answer: [
-  {text: String, correct:true},
-  {text: Boolean, wrong:false}
-]
+
 
 
 
@@ -76,11 +83,10 @@ answer: [
 
 //add event listener to answers
 button.addEventListener("click", response);
-function response () {
-  response=false;
-  console.log("wrong"); 
-  if (response=false) {
+function response() {
+  response = false;
+  console.log("wrong");
+  if (response = false) {
     document.getElementElem("button").innerHTML = "wrong";
-   } 
- }
- 
+  }
+}
