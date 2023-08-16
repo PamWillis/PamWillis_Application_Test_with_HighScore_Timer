@@ -5,24 +5,26 @@ const questionContainer = document.getElementById("question-container");
 //heading
 const heading = "Answer the questions within the 60 secondsLeft, for each question you get wrong, you will be penalized by 15 seconds"
 //question-object
-let problem1 = {
-question: "Which is not an array?",
-answer: {
-  text1: "String", wrong: false,
-  text2: "Boolean", wrong: false,
-  text3: "Alerts", correct: true,
-  text4: "Numbers", wrong: false
-}
+let problem = {
+  question: "Which is not an array?",
+  correctAnswer: "Alerts",
+  answer: {
+    text1: "String",
+    text2: "Boolean",
+    text3: "Alerts",
+    text4: "Numbers",
+  }
 }
 let problem2 = {
   question: "Where is UNC?",
+  correctAnswer: "Chapel Hill",
   answer: {
-    text1: "Chapel Hill", correct: true,
-    text2: "Washington DC", wrong: false ,
-    text3: "Boston", wrong: false,
-    text4: "Juno", wrong: false
+    text1: "Chapel Hill",
+    text2: "Washington DC",
+    text3: "Boston",
+    text4: "Juno",
   }
-  }
+}
 
 //Timer
 // Selects element by class
@@ -48,8 +50,8 @@ function setTime() {
     }
 
   }, 1000);
-  var start = document.getElementById("start")
-  start.style.display = "none";
+  // var start = document.getElementById("start")
+  // start.style.display = "none";
 }
 
 // Function to create and append times up image
@@ -63,26 +65,78 @@ function sendMessage() {
 
 //first question
 function setNextQuestion() {
-  document.getElementById("question").innerText = (problem1.question);
+
+  document.getElementById("question").textContent = problem.question;
+  document.getElementById("choiceA").textContent = problem.answer.text1;
+  document.getElementById("choiceB").textContent = problem.answer.text2;
+  document.getElementById("choiceC").textContent = problem.answer.text3;
+  document.getElementById("choiceD").textContent = problem.answer.text4;
+
 }
 
 //Start Button
 function startQuiz() {
-  document.getElementById("question").innerText = (problem1.question);
+  //document.getElementById("question").innerText = (problem1.question);
   generate.classList.add("hide"),
     document.getElementById("nextgen").classList.remove("hide");
-    console.log(document.getElementsByClassName("btn"))
-    // document.getElementsByClassName("btn").classList.remove("hide");
-    Array.from(document.getElementsByClassName("btn")).forEach(
-      function(element, index, array) {
-          element.classList.remove("hide")
-          //need to place info for button here
-      }
-  );
-    document.getElementById("grading").classList.remove("hide");
+  document.getElementById("grading").classList.remove("hide");
+  console.log(document.getElementsByClassName("btn"))
+  var choicesElement = document.getElementById("answerBtn");
+  choicesElement.classList.remove("hide")
+  choicesElement.classList.add("btn-grid")
+
+
+
 
   setNextQuestion();
 }
+//matching correct answer to button
+function checkAnswer1() {
+  if (problem.answer.text1 === problem.correctAnswer) {
+    console.log("correct");
+    document.getElementById("grading").innerText = ("correct");
+  }
+  else {
+    console.log("wrong");
+    document.getElementById("grading").innerText = ("wrong");
+  }
+
+  [...document.getElementsByClassName("btn")].forEach((element)=>{
+    element.disabled=true;
+  });
+}
+function checkAnswer2() {
+  if (problem.answer.text2 === problem.correctAnswer) {
+    console.log("correct");
+  }
+  else {
+    console.log("wrong")
+  }
+}
+function checkAnswer3() {
+  if (problem.answer.text3 === problem.correctAnswer) {
+    console.log("correct");
+    document.getElementById("grading").innerText = ("correct3");
+  }
+  else {
+    console.log("wrong")
+    document.getElementById("grading").innerText = ("wrong3");
+  }
+}
+function checkAnswer4() {
+  if (problem.answer.text4 === problem.correctAnswer) {
+    console.log("correct");
+  }
+  else {
+    console.log("wrong")
+  }
+}
+
+
+document.getElementById("choiceA").addEventListener("click", checkAnswer1)
+document.getElementById("choiceB").addEventListener("click", checkAnswer2)
+document.getElementById("choiceC").addEventListener("click", checkAnswer3)
+document.getElementById("choiceD").addEventListener("click", checkAnswer4)
 
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button

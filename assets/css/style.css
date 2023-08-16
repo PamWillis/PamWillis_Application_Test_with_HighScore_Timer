@@ -27,11 +27,10 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vw;
-    flex-wrap: none;
-    
+    flex-wrap: none;  
 }
 
-
+/* THREE MAIN SECTIONS */
 .highscore {   
     width: 25%;
     height: auto;
@@ -48,17 +47,15 @@ body {
     justify-content: center;
     align-items: start;
 
-
-
 }
 .timeSect {
     background-color: #cc99ff;
     width: 25%;
     height: auto;
     text-align: center;
-
 }
 
+/* INNER CONTAINER */
 .central-container {
     display: block;
     background-color: white;
@@ -101,6 +98,12 @@ body {
     font-size: 30px;
 }
 
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* HIDE and DISPLAY */
 .hide {
     display: none;
@@ -110,6 +113,7 @@ body {
     display: flex;
 }
 
+/* QUESTIONS/GRADING/BUTTON */
 #question {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
@@ -153,20 +157,19 @@ body {
     margin: 20px;
 }
 
+/* TIMER */
 .startTime {
     display: block;
     box-sizing: 20px, 5px;
 }
 .next {
     display: block;
-    box-sizing: 20px, 5px;
-}
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-sizing: 8
+    20px, 5px;
 }
 
+
+/* WHITE BACKGROUND CARD FOR CENTER AREA */
 .card-footer {
     text-align: center;
 }
