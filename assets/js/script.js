@@ -72,21 +72,5 @@ generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
 generate.addEventListener("click", setTime)
 
-start.disabled = false
+// start.disabled = false
 
-
-
-
-
-
-
-
-//add event listener to answers
-button.addEventListener("click", response);
-function response() {
-  response = false;
-  console.log("wrong");
-  if (response = false) {
-    document.getElementElem("button").innerHTML = "wrong";
-  }
-}
