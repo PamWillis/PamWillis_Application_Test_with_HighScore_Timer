@@ -1,30 +1,37 @@
 const startButton = document.getElementById("generator");
-const nextButton = document.getElementById("nextBtn");
 const questionContainer = document.getElementById("question-container");
 
 //heading
-const heading = "Answer the questions within the 60 secondsLeft, for each question you get wrong, you will be penalized by 15 seconds"
+const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
 //question-object
-let problem = {
-  question: "Which is not an array?",
-  correctAnswer: "Alerts",
-  answer: {
-    text1: "String",
-    text2: "Boolean",
-    text3: "Alerts",
-    text4: "Numbers",
+let selectProblems = {
+  problem: {
+    question: "Commonly used data types Do Not Include?",
+    correctAnswer: "Alerts",
+    answer: ['Strings', 'Booleans', 'Alerts', 'Numbers']
+  },
+  problem: {
+    question: "Arrays in javascript can be used to store ______.",
+    correctAnswer: "all of the above",
+    answer: ['number of strings', 'other arrays', 'booleans', 'all of the above']
+  },
+  problem: {
+    question: "String value must be enclosed within _______ when being assigned to variables",
+    correctAnswer: "parenthesis",
+    answer: ['commas', 'curly brackets', 'quotes', 'parenthesis']
+  },
+  problem: {
+    question: "A very useful tool used during developement and debugging for printing content to the debugger is?",
+    correctAnswer: ["console.log"],
+    answer: ['Javascript', 'terminal/bash', 'for loops', 'console.log']
+  },
+  problem: {
+    question: "The condition in an if / else statement enclosed within ________",
+    correctAnswer: "curly brackets",
+    answer: ['quotes', 'curly brackets', 'parenthesis', 'square brackets']
   }
 }
-let problem2 = {
-  question: "Where is UNC?",
-  correctAnswer: "Chapel Hill",
-  answer: {
-    text1: "Chapel Hill",
-    text2: "Washington DC",
-    text3: "Boston",
-    text4: "Juno",
-  }
-}
+
 
 //Timer
 // Selects element by class
@@ -63,84 +70,25 @@ function sendMessage() {
 
 }
 
-//first question
-function setNextQuestion() {
-
-  document.getElementById("question").textContent = problem.question;
-  document.getElementById("choiceA").textContent = problem.answer.text1;
-  document.getElementById("choiceB").textContent = problem.answer.text2;
-  document.getElementById("choiceC").textContent = problem.answer.text3;
-  document.getElementById("choiceD").textContent = problem.answer.text4;
-
-}
-
-//Start Button
+//fill problem
 function startQuiz() {
-  //document.getElementById("question").innerText = (problem1.question);
-  generate.classList.add("hide"),
-    document.getElementById("nextgen").classList.remove("hide");
-  document.getElementById("grading").classList.remove("hide");
-  console.log(document.getElementsByClassName("btn"))
-  var choicesElement = document.getElementById("answerBtn");
-  choicesElement.classList.remove("hide")
-  choicesElement.classList.add("btn-grid")
-
-
-
-
-  setNextQuestion();
-}
-//matching correct answer to button
-function checkAnswer1() {
-  if (problem.answer.text1 === problem.correctAnswer) {
-    console.log("correct");
-    document.getElementById("grading").innerText = ("correct");
-  }
-  else {
-    console.log("wrong");
-    document.getElementById("grading").innerText = ("wrong");
-  }
-
-  [...document.getElementsByClassName("btn")].forEach((element)=>{
-    element.disabled=true;
-  });
-}
-function checkAnswer2() {
-  if (problem.answer.text2 === problem.correctAnswer) {
-    console.log("correct");
-  }
-  else {
-    console.log("wrong")
+  generate.classList.add("hide"); //hide start button
+  for (i = 0; i < selectProblems.problem; i++) { 
+    document.getElementById("question").add(selectProblems.problem.question); //fill question
+    expandingList(selectProblems.problem.answer) = document.createElement("ul", { is: "expanded-list" }); //create buttons
+    
+    //button click invokes comparison of click value and correct answer
+    if (selectProblems.problem.answer === selectProblems.problem.correctAnswer) {
+      document.getElementById("grading").innerText = ("correct");
+    }
+    else {
+      document.getElementById("grading").innerText = ("wrong");
+    }
   }
 }
-function checkAnswer3() {
-  if (problem.answer.text3 === problem.correctAnswer) {
-    console.log("correct");
-    document.getElementById("grading").innerText = ("correct3");
-  }
-  else {
-    console.log("wrong")
-    document.getElementById("grading").innerText = ("wrong3");
-  }
-}
-function checkAnswer4() {
-  if (problem.answer.text4 === problem.correctAnswer) {
-    console.log("correct");
-  }
-  else {
-    console.log("wrong")
-  }
-}
-
-
-document.getElementById("choiceA").addEventListener("click", checkAnswer1)
-document.getElementById("choiceB").addEventListener("click", checkAnswer2)
-document.getElementById("choiceC").addEventListener("click", checkAnswer3)
-document.getElementById("choiceD").addEventListener("click", checkAnswer4)
 
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
 generate.addEventListener("click", setTime)
 
-// start.disabled = false
 
