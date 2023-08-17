@@ -73,10 +73,14 @@ function sendMessage() {
 //fill problem
 function startQuiz() {
   generate.classList.add("hide"); //hide start button
-  for (i = 0; i < selectProblems.problem; i++) { 
-    document.getElementById("question").add(selectProblems.problem.question); //fill question
-    expandingList(selectProblems.problem.answer) = document.createElement("ul", { is: "expanded-list" }); //create buttons
-    
+  for (i = 0; i < selectProblems.problem.length; i++) { 
+    document.getElementById("question").add(selectProblems.problem.question);
+   } //fill answers
+    // for (i = 0; i < selectProblems.problem.answer.length; i++) {
+    //   selectProblems.problem.answer.forEach(i)
+    //     document.createElement("ul");
+    //   }
+    // }
     //button click invokes comparison of click value and correct answer
     if (selectProblems.problem.answer === selectProblems.problem.correctAnswer) {
       document.getElementById("grading").innerText = ("correct");
@@ -85,7 +89,7 @@ function startQuiz() {
       document.getElementById("grading").innerText = ("wrong");
     }
   }
-}
+
 
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
