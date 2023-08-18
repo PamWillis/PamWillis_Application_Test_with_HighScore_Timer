@@ -27,14 +27,14 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vw;
-    flex-wrap: none;  
+    flex-wrap: none;
 }
 
 /* THREE MAIN SECTIONS */
-.highscore {   
+.highscore {
     width: 25%;
     height: auto;
-    background-color:lightblue;
+    background-color: lightblue;
     text-align: center;
 }
 
@@ -42,12 +42,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
-    height:auto;
+    height: auto;
     background-color: #ccff66;
     justify-content: center;
     align-items: start;
 
 }
+
 .timeSect {
     background-color: #cc99ff;
     width: 25%;
@@ -103,18 +104,26 @@ body {
     font-weight: normal;
     color: black;
     text-align: justify;
-    
 }
+
+#heading {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: black;
+    text-align: justify;
+}
+
 #grading {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 20px;
     margin-top: 15px;
     margin-bottom: 40px;
     font-style: italic;
     color: blue;
-    
 }
+
 .btn {
     border-radius: 7px;
     border-color: black;
@@ -146,10 +155,10 @@ body {
     display: block;
     box-sizing: 20px, 5px;
 }
+
 .next {
     display: block;
-    box-sizing: 8
-    20px, 5px;
+    box-sizing: 8 20px, 5px;
 }
 
 

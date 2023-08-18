@@ -1,34 +1,42 @@
 const startButton = document.getElementById("generator");
 const questionContainer = document.getElementById("question-container");
+const index = 0;
+var count = 0;
 
 //heading
 const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
-//question-object
-selectProblems = [
-  problem = {
+
+//question-array
+var selectProblems = [
+  {
+    prob: [1],
     question: "Commonly used data types Do Not Include?",
     correctAnswer: "Alerts",
-    answer: ['Strings', 'Booleans', 'Alerts', 'Numbers']
+    choices: ['Strings', 'Booleans', 'Alerts', 'Numbers']
   },
-  problem = {
+  {
+    prob: [2],
     question: "Arrays in javascript can be used to store ______.",
     correctAnswer: "all of the above",
-    answer: ['number of strings', 'other arrays', 'booleans', 'all of the above']
+    choices: ['number of strings', 'other arrays', 'booleans', 'all of the above']
   },
-  problem = {
+  {
+    prob: [3],
     question: "String value must be enclosed within _______ when being assigned to variables",
     correctAnswer: "parenthesis",
-    answer: ['commas', 'curly brackets', 'quotes', 'parenthesis']
+    choices: ['commas', 'curly brackets', 'quotes', 'parenthesis']
   },
-  problem = {
+  {
+    prob: [4],
     question: "A very useful tool used during developement and debugging for printing content to the debugger is?",
     correctAnswer: ["console.log"],
-    answer: ['Javascript', 'terminal/bash', 'for loops', 'console.log']
+    choices: ['Javascript', 'terminal/bash', 'for loops', 'console.log']
   },
-  problem = {
+  {
+    prob: [5],
     question: "The condition in an if / else statement enclosed within ________",
     correctAnswer: "curly brackets",
-    answer: ['quotes', 'curly brackets', 'parenthesis', 'square brackets']
+    choices: ['quotes', 'curly brackets', 'parenthesis', 'square brackets']
   }
 ]
 
@@ -40,7 +48,7 @@ var timeEl = document.querySelector(".time");
 // Selects element by id
 var mainEl = document.getElementById("main");
 
-var secondsLeft = 10;
+var secondsLeft = 30;
 
 function setTime() {
 
@@ -69,51 +77,70 @@ function sendMessage() {
   mainEl.appendChild(imgEl);
 
 }
+//compares clicked button to correctAnswer
 
-//fill problem
+
+//at moment of clicking Start
 function startQuiz() {
-  generate.classList.add("hide"); //hide start button
   
-  for (i = 0; i < selectProblems.length; i++) {
-    console.log(selectProblems.length)
-    if (i<=selectProblems.length) {
-  document.getElementById("question").innerHTML = problem.question;
+  setTime() //starts time
+  start.classList.add("hide"); //hide start button
+  questionContainer.classList.remove("hide"); //hide heading
+
   
-  document.getElementById("answerBtn")=document.createElement("li");
+  //Showiing the question
+  document.getElementById('question').innerHTML = selectProblems[index].question;
+  console.log(selectProblems[index].choices)
+  var choicesSection = document.getElementById("answerBtn")
+  
+  //First choice
+  // var buttonEl = document.createElement("button")
+  // buttonEl.textContent = selectProblems[index].choices[0]
+  // choicesSection.appendChild(buttonEl)
+
+  //adds choices
+  for (var i = 0; i < selectProblems[index].choices.length; i++) {
+    var buttonEl = document.createElement("button")
+    buttonEl.classList.add("btn")
+    buttonEl.textContent = selectProblems[index].choices[i]
+    buttonEl.addEventListener("click", checkAnswers)
+    choicesSection.appendChild(buttonEl)
+  }
+  //compares choice/grades/adjust time as needed/adds point as needed
+  function checkAnswers() {
+    console.log("I have been clicke")
+    console.log(this)
+    console.log(this.innerHTML)
+    if (this.innerHTML === selectProblems[index].correctAnswer) {
+      console.log("correct");
+      document.getElementById('grading').innerHTML = ('CORRECT');
+      count++; // log 1pt
+      console.log(count);
+      //switch to next problem, continue thru for loop
 
     }
+    else {
+      console.log("wrong");
+      document.getElementById('grading').innerHTML = ('WRONG');
+      count = count;
+      console.log(count);
+      secondsLeft = secondsLeft - 10;
+      //need to switch to next prob, continue thru for loop
+    }
   }
+
+  // for (var x=selectProblems[index].length; x<=4; x++) {
+  // console.log (x);
+
 }
-  
-  // selectProblems.problem.answer.forEach((answer) => console.log(answer));
-  // for(answer of selectProblems.problem.answer){
-  //   console.log(answer);
-  // }
- 
-  // document.getElementById("grading").innerText = ("wrong");
-  
 
-  // for (i = 0; i <selectProblems.problem; i++) { 
-  //   console.log(selectProblems.problem);
 
-  //  } //fill answers
-    // for (i = 0; i < selectProblems.problem.answer.length; i++) {
-    //   selectProblems.problem.answer.forEach(i)
-    //     document.createElement("ul");
-    //   }
-    // }
-    //button click invokes comparison of click value and correct answer
-    // if (selectProblems.problem.answer === selectProblems.problem.correctAnswer) {
-    //   document.getElementById("grading").innerText = ("correct");
-    // }
-    // else {
-    //   document.getElementById("grading").innerText = ("wrong");
-    // }
-  
+
+
 
 
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
-generate.addEventListener("click", setTime)
+//generate.addEventListener("click", setTime)
 
 

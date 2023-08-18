@@ -14,27 +14,24 @@
     </aside>
     <div class="central">
         <container class="central-container">
-            <div id="question-container">
-                <div id="question">Try to answer the following code-related questions within the time limit. Keep in
-                    mind that incorrect answers will penalize your score time by ten seconds!</div>
-                <ul>
-                    <li id="answerBtn" class="btn" input type="button"></li>
-                </ul>
-                <div id="grading" class="hide">grading</div>
+            <div id="question-container" class="hide">
+                <div id="question"></div>
+                <div id="answerBtn"></div>
+                <div id="grading"></div>
             </div>
-
-            <div class="controls">
-                <button id="generate" class="startBtn">START</button>
-            </div>
+                <div id="start">
+                    <div id="heading" class="heading">Try to answer the following code-related questions within the time
+                        limit. Keep in
+                        mind that incorrect answers will penalize your score time by ten seconds!</div>
+                    <button id="generate" class="startBtn">START</button>
+                </div>
         </container>
     </div>
-
     <aside class="timeSect">
         <h1 class="time"></h1>
         <div id="main"></div>
         <h2>Seconds Remaining</h2>
     </aside>
-
     <script src="./assets/js/script.js"></script>
 </body>
 
