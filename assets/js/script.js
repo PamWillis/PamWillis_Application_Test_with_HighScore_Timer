@@ -1,6 +1,6 @@
 const startButton = document.getElementById("generator");
 const questionContainer = document.getElementById("question-container");
-const index = 0;
+var index = 0;
 var count = 0;
 
 //heading
@@ -116,6 +116,7 @@ function startQuiz() {
       document.getElementById('grading').innerHTML = ('CORRECT');
       count++; // log 1pt
       console.log(count);
+      nextProb();
       //switch to next problem, continue thru for loop
 
     }
@@ -125,6 +126,7 @@ function startQuiz() {
       count = count;
       console.log(count);
       secondsLeft = secondsLeft - 10;
+      nextProb();
       //need to switch to next prob, continue thru for loop
     }
   }
@@ -133,7 +135,11 @@ function startQuiz() {
   // console.log (x);
 
 }
-
+function nextProb() {
+  for (var x=0; x<selectProblems[index].length; x++)
+  console.log(x)
+startQuiz()
+}
 
 
 
