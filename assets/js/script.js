@@ -3,11 +3,7 @@ const questionContainer = document.getElementById("question-container");
 var index = 0;
 var count = 0;
 var countEl = document.querySelector("#count")
-const newWindow = window.open("./Page2.html”)
 
-function setCounterText() {
-  countEl.textContent = count;
-}
 
 //heading
 const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
@@ -111,38 +107,37 @@ function startQuiz() {
     buttonEl.textContent = selectProblems[index].choices[i]
     buttonEl.addEventListener("click", checkAnswers)
     choicesSection.appendChild(buttonEl)
+    
   }
   //compares choice/grades/adjust time as needed/adds point as needed
   function checkAnswers() {
     console.log("I have been clicke")
     console.log(this)
     console.log(this.innerHTML)
-    if (this.innerHTML === selectProblems[index].correctAnswer) {
+    if (this.innerHTML === selectProblems[index].correctAnswer) { //correct add point
       console.log("correct");
       document.getElementById('grading').innerHTML = ('CORRECT');
       count++; // log 1pt
+      setCounterText();
       console.log(count);
-      choicesSection.innerHTML="";
+      choicesSection.innerHTML = ""; //clears choices for next time
       nextProb();
       
-      // choicesSection.buttonEl.innerHTML = "";
-      //switch to next problem, continue thru for loop
 
     }
-    else {
+    else { //wrong, no points
       console.log("wrong");
       document.getElementById('grading').innerHTML = ('WRONG');
-      count = count;
-      console.log(count);
-      secondsLeft = secondsLeft - 10;
-      choicesSection.innerHTML="";
+      secondsLeft = secondsLeft - 10; //takes time off clock
+      choicesSection.innerHTML = ""; //clears choices for next time
+      
       nextProb();
-      // choicesSection.buttonEl.innerHTML = "";
-      //need to switch to next prob, continue thru for loop
+      
     }
   }
-
-
+  function setCounterText() {
+    countEl.textContent = count;
+  }
 
   function nextProb() {
     index++;
@@ -157,14 +152,21 @@ function startQuiz() {
       buttonEl.textContent = selectProblems[index].choices[i]
       buttonEl.addEventListener("click", checkAnswers)
       choicesSection.appendChild(buttonEl)
-      } 
-      
-      window.open(stringURL, "Page2.html”)
+      nextPage()
     }
 
   }
 
+  function nextPage() {
+    if (index >= 4) {
+      window.location.href = 'Page2.html';
+    }
+  }
+  
 }
+
+
+
 
 
 
