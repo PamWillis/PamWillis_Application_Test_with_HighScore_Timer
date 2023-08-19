@@ -1,5 +1,5 @@
-const finalScore1 = localStorage.getItem("finalScore");
-
-function yourScore() {
-    document.getElementById('myCount').innerHTML = ('WRONG');
-}
+let Score = localStorage.getItem(count);
+console.log(Score);
+// function yourScore() {
+//     document.getElementById('myCount').innerHTML = (finalScore);
+// }

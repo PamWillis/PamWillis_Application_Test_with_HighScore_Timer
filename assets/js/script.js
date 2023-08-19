@@ -116,7 +116,6 @@ function startQuiz() {
       console.log("correct");
       document.getElementById('grading').innerHTML = ('CORRECT');
       count++; // log 1pt
-      setCounterText();
       console.log(count);
       choicesSection.innerHTML = ""; //clears choices for next time
       nextProb();
@@ -128,9 +127,7 @@ function startQuiz() {
       document.getElementById('grading').innerHTML = ('WRONG');
       secondsLeft = secondsLeft - 10; //takes time off clock
       choicesSection.innerHTML = ""; //clears choices for next time
-      
       nextProb();
-      
     }
   }
   
@@ -140,7 +137,6 @@ function startQuiz() {
     
     
     for (var i = 0; i < selectProblems[index].choices.length; i++) {
-      
       //quetion
       document.getElementById('question').innerHTML = selectProblems[index].question;
       console.log(selectProblems[index].choices)
@@ -151,9 +147,7 @@ function startQuiz() {
       buttonEl.textContent = selectProblems[index].choices[i]
       buttonEl.addEventListener("click", checkAnswers)
       choicesSection.appendChild(buttonEl)
-      
-      localStorage.setItem( "finalScore", count)
-      // console.log(local.storage.getItem( "finalScore");
+      // console.log("count")
       nextPage()
       
     }
@@ -162,6 +156,8 @@ function startQuiz() {
 
   function nextPage() {
     if (index >= 4) {
+      // console.log("count")
+      localStorage.setItem("count", value);
       window.location.href = 'Page2.html';
     }
 
