@@ -82,17 +82,17 @@ function sendMessage() {
 
 //at moment of clicking Start
 function startQuiz() {
-  
+
   setTime() //starts time
   start.classList.add("hide"); //hide start button
   questionContainer.classList.remove("hide"); //hide heading
 
-  
+
   //Showiing the question
   document.getElementById('question').innerHTML = selectProblems[index].question;
   console.log(selectProblems[index].choices)
   var choicesSection = document.getElementById("answerBtn")
-  
+
   //First choice
   // var buttonEl = document.createElement("button")
   // buttonEl.textContent = selectProblems[index].choices[0]
@@ -117,7 +117,7 @@ function startQuiz() {
       count++; // log 1pt
       console.log(count);
       nextProb();
-      choicesSection.buttonEl.innerHTML="";
+      // choicesSection.buttonEl.innerHTML = "";
       //switch to next problem, continue thru for loop
 
     }
@@ -128,18 +128,27 @@ function startQuiz() {
       console.log(count);
       secondsLeft = secondsLeft - 10;
       nextProb();
-      choicesSection.buttonEl.innerHTML="";
+      // choicesSection.buttonEl.innerHTML = "";
       //need to switch to next prob, continue thru for loop
     }
   }
 
 
 
-function nextProb() {
-  for (var x=0; x<selectProblems[index]; x++) {
-  x = startQuiz();
-    startQuiz();
-}}}
+  function nextProb() {
+    index++;
+    for (var i = 0; i < selectProblems[index].choices.length; i++) {
+      document.getElementById('question').innerHTML = selectProblems[index].question;
+      console.log(selectProblems[index].choices)
+      var choicesSection = document.getElementById("answerBtn")
+      
+      var buttonEl = document.createElement("button")
+      buttonEl.classList.add("btn")
+      buttonEl.textContent = selectProblems[index].choices[i]
+      buttonEl.addEventListener("click", checkAnswers)
+      choicesSection.appendChild(buttonEl)
+    }
+  }}
 
 
 
@@ -148,5 +157,4 @@ function nextProb() {
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
 //generate.addEventListener("click", setTime)
-
 
