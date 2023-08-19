@@ -117,6 +117,7 @@ function startQuiz() {
       count++; // log 1pt
       console.log(count);
       nextProb();
+      choicesSection.buttonEl.innerHTML="";
       //switch to next problem, continue thru for loop
 
     }
@@ -127,19 +128,18 @@ function startQuiz() {
       console.log(count);
       secondsLeft = secondsLeft - 10;
       nextProb();
+      choicesSection.buttonEl.innerHTML="";
       //need to switch to next prob, continue thru for loop
     }
   }
 
-  // for (var x=selectProblems[index].length; x<=4; x++) {
-  // console.log (x);
 
-}
+
 function nextProb() {
-  for (var x=0; x<selectProblems[index].length; x++)
-  console.log(x)
-startQuiz()
-}
+  for (var x=0; x<selectProblems[index]; x++) {
+  x = startQuiz();
+    startQuiz();
+}}}
 
 
 
