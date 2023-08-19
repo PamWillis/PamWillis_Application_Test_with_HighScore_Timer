@@ -2,8 +2,6 @@ const startButton = document.getElementById("generator");
 const questionContainer = document.getElementById("question-container");
 var index = 0;
 var count = 0;
-var countEl = document.querySelector("#count")
-
 
 //heading
 const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
@@ -135,13 +133,14 @@ function startQuiz() {
       
     }
   }
-  function setCounterText() {
-    countEl.textContent = count;
-  }
+  
 
   function nextProb() {
     index++;
+    
+    
     for (var i = 0; i < selectProblems[index].choices.length; i++) {
+      
       //quetion
       document.getElementById('question').innerHTML = selectProblems[index].question;
       console.log(selectProblems[index].choices)
@@ -152,7 +151,11 @@ function startQuiz() {
       buttonEl.textContent = selectProblems[index].choices[i]
       buttonEl.addEventListener("click", checkAnswers)
       choicesSection.appendChild(buttonEl)
+      
+      localStorage.setItem( "finalScore", count)
+      // console.log(local.storage.getItem( "finalScore");
       nextPage()
+      
     }
 
   }
@@ -161,8 +164,10 @@ function startQuiz() {
     if (index >= 4) {
       window.location.href = 'Page2.html';
     }
+
   }
-  
+
+
 }
 
 
