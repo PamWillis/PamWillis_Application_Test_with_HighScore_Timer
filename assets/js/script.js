@@ -2,6 +2,12 @@ const startButton = document.getElementById("generator");
 const questionContainer = document.getElementById("question-container");
 var index = 0;
 var count = 0;
+var countEl = document.querySelector("#count")
+const newWindow = window.open("./Page2.html”)
+
+function setCounterText() {
+  countEl.textContent = count;
+}
 
 //heading
 const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
@@ -118,6 +124,7 @@ function startQuiz() {
       console.log(count);
       choicesSection.innerHTML="";
       nextProb();
+      
       // choicesSection.buttonEl.innerHTML = "";
       //switch to next problem, continue thru for loop
 
@@ -140,17 +147,24 @@ function startQuiz() {
   function nextProb() {
     index++;
     for (var i = 0; i < selectProblems[index].choices.length; i++) {
+      //quetion
       document.getElementById('question').innerHTML = selectProblems[index].question;
       console.log(selectProblems[index].choices)
       var choicesSection = document.getElementById("answerBtn")
-      
+      //choices
       var buttonEl = document.createElement("button")
       buttonEl.classList.add("btn")
       buttonEl.textContent = selectProblems[index].choices[i]
       buttonEl.addEventListener("click", checkAnswers)
       choicesSection.appendChild(buttonEl)
+      } 
+      
+      window.open(stringURL, "Page2.html”)
     }
-  }}
+
+  }
+
+}
 
 
 
