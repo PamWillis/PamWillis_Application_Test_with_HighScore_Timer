@@ -116,6 +116,7 @@ function startQuiz() {
       document.getElementById('grading').innerHTML = ('CORRECT');
       count++; // log 1pt
       console.log(count);
+      choicesSection.innerHTML="";
       nextProb();
       // choicesSection.buttonEl.innerHTML = "";
       //switch to next problem, continue thru for loop
@@ -127,6 +128,7 @@ function startQuiz() {
       count = count;
       console.log(count);
       secondsLeft = secondsLeft - 10;
+      choicesSection.innerHTML="";
       nextProb();
       // choicesSection.buttonEl.innerHTML = "";
       //need to switch to next prob, continue thru for loop
