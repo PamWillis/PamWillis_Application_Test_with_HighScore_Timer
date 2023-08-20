@@ -1,32 +1,36 @@
 var highestScore = 0;
+var submitBtn = document.getElementById("submitBtn")
+var commitHiscore = document.getElementById("commitHiscore")
+
 
 let Score = localStorage.getItem("count");
 
 function Score1() {
-    document.querySelector(".score").textContent = Score;
-  }
+  document.querySelector(".score").textContent = Score;
+}
 Score1();
-console.log(Score);
 
-
-function higherScore() {
-  if (highestScore < count) {
-   highestScore = count;
-  }
-  else {
-    highestScore = highestScore;
-  }
+function Highpt() {
+  document.querySelector(".high").textContent = High;
 }
-console.log(highestScore);
+Highpt();
 
-
-var initials= [];
-
+//add initials to local storage/pull highscore
 function addInfo() {
-  localStorage.setItem("initEnter",document.getElementById("initEnter").value);
   allDone.classList.add("hide");
-  highScore.classList.remove("hide");
+  pagescore.classList.remove("hide");
+  document.getElementById("initEnter").textContent = Initials;
+  localStorage.setItem("Initials", "initials");
+  localStorage.getItem("count");
+  localStorage.setItem("highestScore", "high");
+  var newScore = {
+  //if count is higher than highestScore create newScore and push newScore to highestScore
+  //if not newScore = highestScore
+  //so when it flips to IDmyScore newScore/highestScore can be inserted on that page with initials, 
+  //See function Highpt above
+  }
 }
+
 function startAgain() {
   window.location.href = "index.html";
 }
