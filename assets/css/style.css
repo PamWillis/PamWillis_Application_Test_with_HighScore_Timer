@@ -57,7 +57,7 @@ body {
 }
 
 /* INNER CONTAINER */
-.central-container {
+.centralContainer {
     display: block;
     background-color: white;
     width: 400px;
@@ -190,6 +190,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 800;
     font-size: 40vmax;
+    font-weight: normal;
+    color: black;
+    text-align: justify;
+   
 
 }
 #scoreBox {
@@ -200,7 +204,7 @@ body {
 }
 .central2 {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: flex;
     width: 100%;
     height: auto;
     background-color: #ccff66;
@@ -216,6 +220,34 @@ body {
     border-color: black;
     padding: 5px;
     background-color: rgb(243, 4, 4);
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+#yourScore {
+    justify-content: center;
+    align-items: center;
+}
+#goBack {
+    border-radius: 7px;
+    border-color: black;
+    padding: 5px;
+    background-color: rgb(16, 247, 124);
+    color: black;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+#commitHiscore {
+    border-radius: 7px;
+    border-color: black;
+    padding: 5px;
+    background-color: rgb(243, 4, 239);
     color: white;
     font-weight: bold;
     margin-top: 10px;

@@ -11,23 +11,46 @@
 
 <body>
     <div class="central2">
-        <div class="central-container">
-            <div id="heading" class="heading2">
+        <div id=allDone class="centralContainer">
+            <div class="heading2">
                 <h1>All done!</h1>
             </div>
             <div id="scoreBox">
-                <h2 id="myCount">Your final Score is<span class="score"></span></h2></div>
-                <h2>Enter for high score</h2><br>
-            
-  <label for="Initials"><h2>Your Initials</h2></label><br>
-  <input type="text" id="fname" name="fname"><br><br>
-  <button id=submitBtn>SUBMIT</button>
-</form>
+                <h2 id="myCount">Your final Score is<span class="score"></span></h2>
             </div>
+            <h2>Enter for high score</h2><br>
+
+            <label for="Initials">
+                <h2>Your Initials</h2>
+            </label><br>
+            <input id="initEnter" type="text" name="initial"><br><br>
+            <button id=submitBtn>SUBMIT</button>
+            </form>
+        </div>
+        <div id=highScore class="centralContainer hide">
+            <div id="heading" class="heading2">
+               
+                <label>High Score</label>
+                <input id="yourScore" type="text" name="yourHiScore"><br><br>
+                <button id=goBack>GO BACK</button>
+                <button id=commitHiscore>FINISHED</button>
+            <!-- </div>
+            <div id="scoreBox">
+                <h2 id="myCount">Your final Score is<span class="score"></span></h2>
+            </div>
+            <h2>Enter for high score</h2><br>
+
+            <label for="Initials">
+                <h2>Your Initials</h2>
+            </label><br>
+            <input id="initEnter" type="text" name="initial"><br><br>
+             -->
+            </form>
         </div>
     </div>
+    </div>
     <div>
-        
+
     </div>
 
     <script src="./assets/js/script2.js"></script>

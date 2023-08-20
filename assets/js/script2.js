@@ -6,14 +6,14 @@ function Score1() {
 Score1();
 var initials= [];
 
-
-
-function addInfo {
-  document.getElementsByTagName("label");
-  localStorage.setItem(initials, "value");
+function addInfo() {
+  
+  let letters = document.getElementsByTagName("label");
+  console.log(letters);
+  localStorage.setItem(letters, "string");
+  allDone.classList.add("hide");
+  highScore.classList.remove("hide");
 }
 
-let myInitials = localStorage.getItem("initials");
-console.log(myInitals)
 
-submit.addEventListener("click", addInfo);
+submitBtn.addEventListener("click", addInfo);
