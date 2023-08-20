@@ -14,6 +14,12 @@ function addInfo() {
   allDone.classList.add("hide");
   highScore.classList.remove("hide");
 }
-
-
+function startAgain() {
+  window.location.href = "index.html";
+}
+function submitFinal() {
+  //copy high score to final score
+}
 submitBtn.addEventListener("click", addInfo);
+goBack.addEventListener("click", startAgain);
+commitHiscore.addEventListener("click", submitFinal);
