@@ -41,9 +41,9 @@ var selectProblems = [
 ]
 function nextPage() {
   console.log(index);
-  if (index === 5 || secondsLeft===0) {
+  if (index === 5 || secondsLeft === 0) {
     // console.log("count")
-    localStorage.setItem("count", count);
+    localStorage.setItem(count, count);
     window.location.href = "Page2.html";
   }
 }
@@ -67,7 +67,6 @@ function setTime() {
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
-      
       nextPage();
     }
 
@@ -76,10 +75,6 @@ function setTime() {
   // start.style.display = "none";
 }
 
-
-//compares clicked button to correctAnswer
-
-
 //at moment of clicking Start
 function startQuiz() {
 
@@ -87,16 +82,10 @@ function startQuiz() {
   start.classList.add("hide"); //hide start button
   questionContainer.classList.remove("hide"); //hide heading
 
-
   //Showiing the question
   document.getElementById('question').innerHTML = selectProblems[index].question;
   console.log(selectProblems[index].choices)
-  var choicesSection = document.getElementById("answerBtn")
-
-  //First choice
-  // var buttonEl = document.createElement("button")
-  // buttonEl.textContent = selectProblems[index].choices[0]
-  // choicesSection.appendChild(buttonEl)
+  var choicesSection = document.getElementById("answerBtn");
 
   //adds choices
   for (var i = 0; i < selectProblems[index].choices.length; i++) {
@@ -105,9 +94,8 @@ function startQuiz() {
     buttonEl.textContent = selectProblems[index].choices[i]
     buttonEl.addEventListener("click", checkAnswers)
     choicesSection.appendChild(buttonEl)
-    
   }
-  
+
   //compares choice/grades/adjust time as needed/adds point as needed
   function checkAnswers() {
     console.log("I have been clicke")
@@ -120,10 +108,9 @@ function startQuiz() {
       console.log(count);
       choicesSection.innerHTML = ""; //clears choices for next time
       nextProb();
-      
 
     }
-    else { //wrong, no points
+    else if (secondsLeft>=10) { //wrong, no points
       console.log("wrong");
       document.getElementById('grading').innerHTML = ('WRONG');
       secondsLeft = secondsLeft - 10; //takes time off clock
@@ -131,13 +118,18 @@ function startQuiz() {
       console.log(secondsLeft);
       nextProb();
     }
+    else { //wrong, no points
+      console.log("wrong");
+      document.getElementById('grading').innerHTML = ('WRONG');
+      choicesSection.innerHTML = ""; //clears choices for next time
+      console.log(secondsLeft);
+      nextProb();
+    }
   }
-  
 
   function nextProb() {
     index++;
-    
-    
+
     for (var i = 0; i < selectProblems[index].choices.length; i++) {
       //quetion
       document.getElementById('question').innerHTML = selectProblems[index].question;
@@ -152,29 +144,9 @@ function startQuiz() {
       // console.log("count")
       console.log(secondsLeft);
       nextPage()
-      
-      
     }
-
   }
-
-  // function nextPage() {
-  //   console.log(index);
-  //   if (index === 5 || secondsLeft===0) {
-  //     // console.log("count")
-  //     localStorage.setItem("count", count);
-  //     window.location.href = "Page2.html";
-  //   }
-  // }
-
 }
-
-
-
-
-
-
-
 
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button

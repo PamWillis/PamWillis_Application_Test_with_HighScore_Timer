@@ -1,9 +1,25 @@
+var highestScore = [0];
+
 let Score = localStorage.getItem("count");
-console.log(Score);
+let numScore = localStorage.getItem(count);
 function Score1() {
     document.querySelector(".score").textContent = Score;
   }
 Score1();
+console.log(Score);
+console.log(numScore);
+
+function higherScore() {
+  if (highestScore < numScore) {
+    highestScore.valueOf = numScore;
+  }
+  else {
+    highestScore = highestScore;
+  }
+}
+console.log(highestScore);
+
+
 var initials= [];
 
 function addInfo() {
@@ -16,7 +32,7 @@ function startAgain() {
 }
 function submitFinal() {
   localStorage.getItem("count")
-  //figure out which is the hightest number
+  //figure out which is the highest number
 }
 submitBtn.addEventListener("click", addInfo);
 goBack.addEventListener("click", startAgain);
