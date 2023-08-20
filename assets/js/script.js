@@ -43,7 +43,7 @@ function nextPage() {
   console.log(index);
   if (index === 5 || secondsLeft === 0) {
     // console.log("count")
-    localStorage.setItem(count, count);
+    localStorage.setItem("count", count);
     window.location.href = "Page2.html";
   }
 }

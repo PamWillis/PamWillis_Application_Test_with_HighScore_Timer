@@ -1,23 +1,23 @@
-var highestScore = [0];
+var highestScore = 0;
 
 let Score = localStorage.getItem("count");
-let numScore = localStorage.getItem("count");
+
 function Score1() {
     document.querySelector(".score").textContent = Score;
   }
 Score1();
 console.log(Score);
-console.log(numScore);
 
-// function higherScore() {
-//   if (highestScore < numScore) {
-//     highestScore.valueOf = numScore;
-//   }
-//   else {
-//     highestScore = highestScore;
-//   }
-// }
-// console.log(higherScore);
+
+function higherScore() {
+  if (highestScore < count) {
+   highestScore = count;
+  }
+  else {
+    highestScore = highestScore;
+  }
+}
+console.log(highestScore);
 
 
 var initials= [];
