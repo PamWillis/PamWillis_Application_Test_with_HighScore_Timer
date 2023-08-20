@@ -1,5 +1,6 @@
-let Score = localStorage.getItem(count);
+let Score = localStorage.getItem("count");
 console.log(Score);
-// function yourScore() {
-//     document.getElementById('myCount').innerHTML = (finalScore);
-// }
+function Score1() {
+    document.querySelector(".score").textContent = Score;
+  }
+Score1();

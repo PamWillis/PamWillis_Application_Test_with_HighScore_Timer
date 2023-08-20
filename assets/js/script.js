@@ -155,12 +155,12 @@ function startQuiz() {
   }
 
   function nextPage() {
-    if (index >= 4) {
+    console.log(index);
+    if (index === 4) {
       // console.log("count")
-      localStorage.setItem("count", value);
-      window.location.href = 'Page2.html';
+      localStorage.setItem("count", count);
+      window.location.href = "Page2.html";
     }
-
   }
 
 
