@@ -7,10 +7,7 @@ Score1();
 var initials= [];
 
 function addInfo() {
-  
-  let letters = document.getElementsByTagName("label");
-  console.log(letters);
-  localStorage.setItem(letters, "string");
+  localStorage.setItem("initEnter",document.getElementById("initEnter").value);
   allDone.classList.add("hide");
   highScore.classList.remove("hide");
 }
@@ -18,7 +15,8 @@ function startAgain() {
   window.location.href = "index.html";
 }
 function submitFinal() {
-  //copy high score to final score
+  localStorage.getItem("count")
+  //figure out which is the hightest number
 }
 submitBtn.addEventListener("click", addInfo);
 goBack.addEventListener("click", startAgain);

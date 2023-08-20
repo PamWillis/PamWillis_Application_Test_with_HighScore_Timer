@@ -39,7 +39,14 @@ var selectProblems = [
     choices: ['quotes', 'curly brackets', 'parenthesis', 'square brackets']
   }
 ]
-
+function nextPage() {
+  console.log(index);
+  if (index === 5 || secondsLeft===0) {
+    // console.log("count")
+    localStorage.setItem("count", count);
+    window.location.href = "Page2.html";
+  }
+}
 
 //Timer
 // Selects element by class
@@ -60,8 +67,8 @@ function setTime() {
     if (secondsLeft === 0) {
       // Stops execution of action at set interval
       clearInterval(timerInterval);
-      // Calls function to create and append image
-      sendMessage();
+      
+      nextPage();
     }
 
   }, 1000);
@@ -69,14 +76,7 @@ function setTime() {
   // start.style.display = "none";
 }
 
-// Function to create and append times up image
-function sendMessage() {
-  timeEl.textContent = " ";
-  var imgEl = document.createElement("img");
-  imgEl.setAttribute("src", "./assets/img/times-up-blue-text-adhesive-note-near-white-alarm-clock-against-black-backdrop-2.jpg");
-  mainEl.appendChild(imgEl);
 
-}
 //compares clicked button to correctAnswer
 
 
@@ -107,6 +107,7 @@ function startQuiz() {
     choicesSection.appendChild(buttonEl)
     
   }
+  
   //compares choice/grades/adjust time as needed/adds point as needed
   function checkAnswers() {
     console.log("I have been clicke")
@@ -127,6 +128,7 @@ function startQuiz() {
       document.getElementById('grading').innerHTML = ('WRONG');
       secondsLeft = secondsLeft - 10; //takes time off clock
       choicesSection.innerHTML = ""; //clears choices for next time
+      console.log(secondsLeft);
       nextProb();
     }
   }
@@ -148,20 +150,22 @@ function startQuiz() {
       buttonEl.addEventListener("click", checkAnswers)
       choicesSection.appendChild(buttonEl)
       // console.log("count")
+      console.log(secondsLeft);
       nextPage()
+      
       
     }
 
   }
 
-  function nextPage() {
-    console.log(index);
-    if (index === 4) {
-      // console.log("count")
-      localStorage.setItem("count", count);
-      window.location.href = "Page2.html";
-    }
-  }
+  // function nextPage() {
+  //   console.log(index);
+  //   if (index === 5 || secondsLeft===0) {
+  //     // console.log("count")
+  //     localStorage.setItem("count", count);
+  //     window.location.href = "Page2.html";
+  //   }
+  // }
 
 }
 
