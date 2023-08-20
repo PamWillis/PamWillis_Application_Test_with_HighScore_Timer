@@ -10,24 +10,34 @@ function Score1() {
 }
 Score1();
 
-function Highpt() {
-  document.querySelector(".high").textContent = High;
-}
-Highpt();
+// function Highpt() {
+//   document.querySelector(".high").textContent = High;
+// }
+// Highpt();
 
 //add initials to local storage/pull highscore
 function addInfo() {
   allDone.classList.add("hide");
   pagescore.classList.remove("hide");
-  document.getElementById("initEnter").textContent = Initials;
+  document.getElementById("initEnter").textContent = "Initials";
   localStorage.setItem("Initials", "initials");
   localStorage.getItem("count");
   localStorage.setItem("highestScore", "high");
+   // get value of input 
+   var initials = document.getElementById("initEnter").value.trim();
+   // make sure value wasn't empty
+   if (initials !== '') {
+     // get saved scores from localstorage, or if not any, set to empty array
+     var highscores =
+       JSON.parse(window.localStorage.getItem('highestscores')) || [];
+
   var newScore = {
-  //if count is higher than highestScore create newScore and push newScore to highestScore
-  //if not newScore = highestScore
-  //so when it flips to IDmyScore newScore/highestScore can be inserted on that page with initials, 
-  //See function Highpt above
+    score: Score,
+    initials: initials,
+  };
+  // save to localstorage
+  high.push(newScore);
+ localStorage.setItem('highscores', JSON.stringify(highestScore));
   }
 }
 
