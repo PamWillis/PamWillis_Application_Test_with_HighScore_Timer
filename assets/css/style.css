@@ -84,6 +84,16 @@ body {
     align-items: start;
 
 }
+.central2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    background-color: #ccff66;
+    justify-content: center;
+    align-items: start;
+
+}
 
 .timeSect {
     background-color: #cc99ff;
