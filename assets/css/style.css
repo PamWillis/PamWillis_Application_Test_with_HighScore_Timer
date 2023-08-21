@@ -29,6 +29,42 @@ body {
     height: 100vw;
     flex-wrap: none;
 }
+#startpage {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+    flex-wrap: none;
+}
+#secondPage {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+    flex-wrap: none;
+    justify-content: center;
+}
+#thirdPage {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+    flex-wrap: none;
+    justify-content: center;
+    
+}
+#pg1central2 {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vw;
+    flex-wrap: none;
+}
+
 
 /* THREE MAIN SECTIONS */
 .highscore {
@@ -196,6 +232,7 @@ body {
    
 
 }
+
 #scoreBox {
     display: flex;
     flex-wrap: flex;
