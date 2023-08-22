@@ -12,6 +12,13 @@ var highscores = JSON.parse(localStorage.getItem('highscores')) || [];
 
 console.log(highscores)
 
+// function view() {
+//   if (localStorage.getItem('highscores') != null) {
+    document.getElementById("Results").innerHTML = JSON.stringify(localStorage.getItem("highscores"));
+//   }
+//   view();
+// }
+
 
 
 // function Score1() {
@@ -193,11 +200,13 @@ function addInfo() {
     highscores.push(newScore);
     //this pushes the array of scores into local storage
     localStorage.setItem('highscores', JSON.stringify(highscores));
+
     //document.querySelector(".high").textContent = theScore;
     secondPage.classList.add("hide");
     thirdPage.classList.remove ("hide");
   }
 }
+
 function startAgain() {
   window.location.href = "index.html";
 }

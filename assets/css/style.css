@@ -293,3 +293,9 @@ body {
     margin-right: 5px;
     font-size: 20px;
 }
+#Results {
+    display: block;
+    color: red;
+    text-align: center;
+    
+}
