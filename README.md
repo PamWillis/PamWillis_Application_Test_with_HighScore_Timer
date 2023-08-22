@@ -36,8 +36,11 @@ it will flip to panel to enter initials and reveal score
 
 ![highscore results](assets/img/textForResults.png)
 
+## Deployment and GitHub
 
+Deployment: https://pamwillis.github.io/PamWillis_Application_Test_with_HighScore_Timer/index.html
 
+Repository: https://github.com/PamWillis/PamWillis_Application_Test_with_HighScore_Timer.git
 ## License
 
 MIT License
