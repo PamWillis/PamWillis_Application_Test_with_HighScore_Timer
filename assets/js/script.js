@@ -14,23 +14,7 @@ console.log(highscores)
 
 
 
-// This was an effort to log highscores on Page2.html
-function view() {
-  if (localStorage.getItem('highscores') != null) {
-document.getElementById("Results").innerHTML = JSON.stringify(localStorage.getItem("highscores"));
-  }
-}
-view();
 
-
-// }
-// for (i=0; i<highscores.length; i++) {
-// if (i<highscores.length) {
-//   console.log(highscores)
-// }
-// console.log(i)
-// }
-// function Score1() {
   document.querySelector(".score").textContent = Score;
 // }
 // Score1();
