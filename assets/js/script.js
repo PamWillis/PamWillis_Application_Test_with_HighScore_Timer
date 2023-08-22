@@ -12,17 +12,28 @@ var highscores = JSON.parse(localStorage.getItem('highscores')) || [];
 
 console.log(highscores)
 
-// function view() {
-//   if (localStorage.getItem('highscores') != null) {
-    document.getElementById("Results").innerHTML = JSON.stringify(localStorage.getItem("highscores"));
-//   }
-//   view();
+
+
+// This was an effort to log highscores on Page2.html
+function view() {
+  if (localStorage.getItem('highscores') != null) {
+document.getElementById("Results").innerHTML = JSON.stringify(localStorage.getItem("highscores"));
+  }
+}
+view();
+
+
 // }
-
-
-
+// for (i=0; i<highscores.length; i++) {
+// if (i<highscores.length) {
+//   console.log(highscores)
+// }
+// console.log(i)
+// }
 // function Score1() {
   document.querySelector(".score").textContent = Score;
+// }
+// Score1();
 
 //heading
 const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
@@ -93,13 +104,13 @@ function setTime() {
       localStorage.setItem("count", count);
       // window.location.href = "Page2.html";
       startpage.classList.add("hide");
-    secondPage.classList.remove("hide");
+      secondPage.classList.remove("hide");
 
     }
 
   }, 1000);
-  // var start = document.getElementById("start")
-  // start.style.display = "none";
+
+  
 }
 //compares choice/grades/adjust time as needed/adds point as needed
 function checkAnswers() {
@@ -112,17 +123,8 @@ function checkAnswers() {
     count++; // log 1pt
     console.log(count);
     choicesSection.innerHTML = ""; //clears choices for next time
-
-
   }
-  // else if (secondsLeft>=10) { //wrong, no points
-  //   console.log("wrong");
-  //   document.getElementById('grading').innerHTML = ('WRONG');
-  //   secondsLeft = secondsLeft - 10; //takes time off clock
-  //   choicesSection.innerHTML = ""; //clears choices for next time
-  //   console.log(secondsLeft);
-  //   nextProb();
-  // }
+ 
   else { //wrong, no points
     console.log("wrong");
     document.getElementById('grading').innerHTML = ('WRONG');
@@ -131,7 +133,7 @@ function checkAnswers() {
     console.log(secondsLeft);
 
   }
-  //After we check is the choice icked is correct or not, then we will add 1 to indexx to move on the next questions
+  //After we check is the choice picked is correct or not, then we will add 1 to indexx to move on the next questions
 
   index++
   //before we move on tothe next question we check to see if index is 5 , which means we have already reach the final question 
@@ -203,7 +205,7 @@ function addInfo() {
 
     //document.querySelector(".high").textContent = theScore;
     secondPage.classList.add("hide");
-    thirdPage.classList.remove ("hide");
+    thirdPage.classList.remove("hide");
   }
 }
 
@@ -212,6 +214,7 @@ function startAgain() {
 }
 function submitFinal() {
 }
+
 submitBtn.addEventListener("click", addInfo);
 goBack.addEventListener("click", startAgain);
-commitHiscore.addEventListener("click", submitFinal);
+commitHiscore.addEventListener("click", submitFinal)

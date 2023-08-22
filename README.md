@@ -10,19 +10,32 @@ This project entails the use of multiple files of HTML and javascript, along wit
 - Javascript methods were used to get and set information to and from the local Server. Script and href were used to navigat thru the two pages. If statements and for loops were used to analyze the events as the data was being entered.
 
 
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+The quiz is begun by clicking the start button.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![start](assets/img/start.png)
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+
+First question will start the timer on the right
+
+![question and timer](./img/question_timer.png)
+
+when either time runs out or questions are finished
+it will flip to panel to enter initials and reveal score
+
+![enter initials](assets/img/initials_Entry.png)
+
+    hit enter and advance to next panel, this is where you can go back and try again or finish game.
+
+![go back or finish](assets/img/goBack_orFinish.png)
+
+    Also here is where you can view final High Scores, this can also be accessed from the first page on the left hand column
+
+    when hitting results, I still have difficulty with the text for the results
+
+![highscore results](assets/img/textForResults.png)
+
 
 
 ## License
