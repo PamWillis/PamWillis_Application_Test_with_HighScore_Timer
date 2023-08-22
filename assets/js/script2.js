@@ -2,7 +2,7 @@
 // function view() {
 //     if (localStorage.getItem('highscores') != null) {
       var highscores = localStorage.getItem("highscores");
-      document.getElementById("Results").innerHTML = JSON.stringify(highscores[0].initials + " scored " + highscores[0].score);
+      document.getElementById("Results").innerHTML = JSON.stringify(highscores);
 
   console.log(highscores);
   
