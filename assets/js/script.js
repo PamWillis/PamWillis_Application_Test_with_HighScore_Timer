@@ -4,6 +4,19 @@ var choicesSection = document.getElementById("answerBtn");
 var index = 0;
 var count = 0;
 
+var submitBtn = document.getElementById("submitBtn")
+var commitHiscore = document.getElementById("commitHiscore")
+let Score = localStorage.getItem("count");
+//this creates a variable called highscores that looks in local storage for a key called 'highscores' if it is not found it becomes an empty array 
+var highscores = JSON.parse(localStorage.getItem('highscores')) || [];
+
+console.log(highscores)
+
+
+
+// function Score1() {
+  document.querySelector(".score").textContent = Score;
+
 //heading
 const heading = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds!";
 
@@ -46,8 +59,8 @@ function nextPage() {
     // console.log("count")
     localStorage.setItem("count", count);
     // window.location.href = "Page2.html";
-    
-
+    startpage.classList.add("hide");
+    secondPage.classList.remove("hide");
   }
 }
 
@@ -72,6 +85,8 @@ function setTime() {
       clearInterval(timerInterval);
       localStorage.setItem("count", count);
       // window.location.href = "Page2.html";
+      startpage.classList.add("hide");
+    secondPage.classList.remove("hide");
 
     }
 
@@ -79,8 +94,8 @@ function setTime() {
   // var start = document.getElementById("start")
   // start.style.display = "none";
 }
- //compares choice/grades/adjust time as needed/adds point as needed
- function checkAnswers() {
+//compares choice/grades/adjust time as needed/adds point as needed
+function checkAnswers() {
   console.log("I have been clicke")
   console.log(this)
   console.log(this.innerHTML)
@@ -90,7 +105,7 @@ function setTime() {
     count++; // log 1pt
     console.log(count);
     choicesSection.innerHTML = ""; //clears choices for next time
-    //nextProb();
+
 
   }
   // else if (secondsLeft>=10) { //wrong, no points
@@ -107,7 +122,7 @@ function setTime() {
     secondsLeft = secondsLeft - 10; //takes time off clock
     choicesSection.innerHTML = ""; //clears choices for next time
     console.log(secondsLeft);
-    //nextProb();
+
   }
   //After we check is the choice icked is correct or not, then we will add 1 to indexx to move on the next questions
 
@@ -118,17 +133,13 @@ function setTime() {
     // console.log("count")
     localStorage.setItem("count", count);
     // window.location.href = "Page2.html";
-    // pg1central2.classList.remove("hide");
-    pagescore.classList.remove("hide");
-    
-
+    startpage.classList.add("hide");
+    secondPage.classList.remove("hide");
   }
-  else{
+  else {
     //show the next question
     showQuestions();
   }
-
-
 }
 //at moment of clicking Start
 function startQuiz() {
@@ -141,24 +152,57 @@ function startQuiz() {
 
 }
 
-function showQuestions(){
-    
-    //Showiing the question
-    document.getElementById('question').innerHTML = selectProblems[index].question;
-    console.log(selectProblems[index].choices)
-     
-    //adds choices
-    for (var i = 0; i < selectProblems[index].choices.length; i++) {
-      var buttonEl = document.createElement("button")
-      buttonEl.classList.add("btn")
-      buttonEl.textContent = selectProblems[index].choices[i]
-      buttonEl.addEventListener("click", checkAnswers)
-      choicesSection.appendChild(buttonEl)
-    }
+function showQuestions() {
+
+  //Showiing the question
+  document.getElementById('question').innerHTML = selectProblems[index].question;
+  console.log(selectProblems[index].choices)
+
+  //adds choices
+  for (var i = 0; i < selectProblems[index].choices.length; i++) {
+    var buttonEl = document.createElement("button")
+    buttonEl.classList.add("btn")
+    buttonEl.textContent = selectProblems[index].choices[i]
+    buttonEl.addEventListener("click", checkAnswers)
+    choicesSection.appendChild(buttonEl)
+  }
 
 }
 
 generate.addEventListener("click", startQuiz)
 // Add event listener to generate button
-//generate.addEventListener("click", setTime)
 
+//add initials to local storage/pull highscore
+function addInfo() {
+  allDone.classList.add("hide");
+  pagescore.classList.remove("hide");
+  document.getElementById("initEnter").textContent = "initials";
+  localStorage.setItem("initials", "initials");
+
+  // get value of input 
+  var initials = document.getElementById("initEnter").value.trim();
+  //  // make sure value wasn't empty
+  if (initials !== '') {
+
+    //This combines the initials with the score into a variable called newScore
+    var newScore = {
+      score: Score,
+      initials: initials
+    };
+    // this takes the array from the previous score and adds in newScore
+    highscores.push(newScore);
+    //this pushes the array of scores into local storage
+    localStorage.setItem('highscores', JSON.stringify(highscores));
+    //document.querySelector(".high").textContent = theScore;
+    secondPage.classList.add("hide");
+    thirdPage.classList.remove ("hide");
+  }
+}
+function startAgain() {
+  window.location.href = "index.html";
+}
+function submitFinal() {
+}
+submitBtn.addEventListener("click", addInfo);
+goBack.addEventListener("click", startAgain);
+commitHiscore.addEventListener("click", submitFinal);
