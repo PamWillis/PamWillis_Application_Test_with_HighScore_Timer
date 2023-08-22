@@ -38,23 +38,12 @@ body {
     flex-wrap: none;
 }
 #secondPage {
-    display: flex;
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vw;
-    flex-wrap: none;
-    justify-content: center;
 }
 #thirdPage {
-    display: flex;
     padding: 0;
-    margin: 0;
-    width: 100vw;
-    height: 100vw;
-    flex-wrap: none;
-    justify-content: center;
-    
+    margin: 0;  
 }
 #pg1central2 {
     display: flex;
@@ -92,7 +81,17 @@ body {
     background-color: #ccff66;
     justify-content: center;
     align-items: start;
-
+    width: 100vw;
+    height: 100vw;
+}
+.central3 {
+    display: flex;
+    background-color: #ccff66;
+    align-items: start;
+    justify-content: center;
+    width: 100vw;
+    height: 100vw;
+    
 }
 
 .timeSect {
@@ -104,7 +103,6 @@ body {
 
 /* INNER CONTAINER */
 .centralContainer {
-    display: block;
     background-color: white;
     width: 400px;
     height: auto;
@@ -112,8 +110,6 @@ body {
     padding: 20px;
     border-radius: 10px;
     margin-top: 75px;
-    justify-content: center;
-    align-items: center;
     box-shadow: 0 0 15px 3px;
     color: darkgreen;
     text-align: center;
@@ -239,8 +235,6 @@ body {
     font-weight: normal;
     color: black;
     text-align: justify;
-   
-
 }
 
 #scoreBox {
@@ -249,14 +243,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.central2 {
-    display: flex;
-    width: 100%;
-    height: auto;
-    background-color: #ccff66;
-    justify-content: center;
-    align-items: start;
-}
+
 .score {
     font-size: 50px;
     font-weight: bold;

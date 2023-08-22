@@ -132,7 +132,7 @@ function setTime() {
 }
 //at moment of clicking Start
 function startQuiz() {
-  // start.classList.add("hide"); //hide start button
+  start.classList.add("hide"); //hide start button
 
   setTime() //starts time
 
